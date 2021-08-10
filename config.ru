@@ -2,7 +2,7 @@ require_relative "./config/environment.rb"
 
 use Rack::Cors do 
     allow do
-        origin '*'
+        origins '*'
         resource '*', headers: :any, methods: [:get, :post, :patch, :put, :delete]
     end
 end
