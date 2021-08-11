@@ -1,9 +1,13 @@
 class Category < ActiveRecord::Base
-    has_many :events
+  has_many :events
 
-    def self.find_all(id)
-        self.all.find(id)
+  def self.render_categories
+    all.map do |category|
+      {
+        id: category.id,
+        name: category.name
+      }
     end
+  end
 end
 
-#lets add some custom methods
